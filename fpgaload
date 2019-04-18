@@ -12,7 +12,7 @@ PIN_CONFIG      = 12
 PIN_STATUS      = 16
 PIN_CONF_DONE   = 26
 
-# Flattens a deeply nested list, use this to construct the lookup table below
+# Flattens a deeply nested list, we use this to construct the lookup table below
 def flatten(container):
     for i in container:
         if isinstance(i, list):

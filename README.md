@@ -7,10 +7,10 @@ First enable SPI, use `raspi-config` or uncomment this line in `/boot/config.txt
 #dtparam=spi=on
 ```
 
-You probably need to update `spidev`.
+You probably need to update `spidev` to get the faster writebytes2 function.
 
 ```bash
-pip3 install spidev
+sudo pip3 install spidev
 ```
 
 Place `fpgaload` in your path.
@@ -27,3 +27,7 @@ fpgalaod < tujadev.rbf
 # Program over SSH
 cat tujadev.rbf|ssh pi@sdr.local fpgaload
 ```
+
+## To enable automatic programming at boot
+
+Take a look at tujasdr-fpgaload.service

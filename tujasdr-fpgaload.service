@@ -1,0 +1,16 @@
+# Program the FPGA at boot systemd.service file
+# place in /etc/systemd/system
+# Start: 
+# sudo systemctl start tujasdr-fpgaload
+# Enable at boot:
+# sudo systemctl enable tujasdr-fpgaload
+
+[Unit]
+Description=TujaSDR program FPGA at boot service
+
+[Service]
+# TODO: Probably don't hardcode this path but use an environemnt file.
+ExecStart=/usr/local/bin/fpgaload "/home/pi/tujadev.rbf"
+
+[Install]
+WantedBy=multi-user.target
